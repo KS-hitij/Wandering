@@ -15,7 +15,8 @@ body{
 }
 
 .navbar-collapse.show {
-    margin-bottom: 20px; /* Push the content down */
+    margin-bottom: 20px; 
+    background-color: white !important;
 }
 
 .fa-compass{
