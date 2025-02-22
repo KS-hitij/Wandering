@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+    <body>
+        <% if(result.allListings.length!=0) {%>
+        <h1>All Listings</h1><% if(typeof filter!== "undefined") {%><b> For <%= filter %><% } %></b>
+        <% } %>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" id="listings-container">
+            <% if(result.allListings.length!=0) {%>
+                <% for(let listing of result.allListings) { %>
+                    <a href="/listing/<%= listing._id %>" class="listing-link">
+                        <div class="card col">
+                            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image"
+                                style="height: 20rem;">
+                            <div class="card-img-overlay"></div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <b>
+                                        <%= listing.title %>
+                                    </b> <br>
+                                    &#x20b9; <%= listing.price.toLocaleString("en-IN") %>/night
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <% } %>
+            <% } else { %>
+                <h2 class="text-center w-100 mt-5">Sorry Currently No listing Is Availaible</h2>
+             <% } %>
+        </div>
+        <% if (result.hasNextPage) { %>
+            <div class="text-center">
+                <button class="show-btn btn">Show More</button>
+            </div>
+        <% } %> 
+        <script>
+            window.appData = {
+                filter: "<%= filter ? filter : "" %>",
+                currPage: <%= result.next || 1 %>
+            };
+        </script>  
+        <script src="/js/loadMore.js"></script>  
+    </body>

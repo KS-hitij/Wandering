@@ -1,0 +1,107 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-6 offset-2">
+            <h1>Create A New Listing</h1><br>
+            <form action="/listing/create" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div>
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="Listing[title]" placeholder="Enter Title" class="form-control" required>
+                    <div class="invalid-feedback">Please Enter Title</div><br>
+                </div>
+                <div>
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" name="Listing[description]" placeholder="Enter Description" class="form-control" required>
+                    <div class="invalid-feedback">Please Enter Description</div><br>
+                </div>
+                <div>
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" name="Listing[image]" class="form-control"><br>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="Listing[price]" placeholder="Enter Price" class="form-control" required>
+                        <div class="invalid-feedback">Please Enter Price</div><br>
+                    </div>
+                    <div class="col-4 offset-2">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="Listing[location]" placeholder="Enter Location" class="form-control" required>
+                        <div class="invalid-feedback">Please Enter Location</div><br>
+                    </div>
+                </div>
+                <div>
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" name="Listing[country]" placeholder="Enter Country" class="form-control" required>
+                    <div class="invalid-feedback">Please Enter Country</div><br>
+                </div>
+                <div class="row">
+                    <p>Choose any three categories you think your place will fit in the best</p>
+                    <div class="col-4">
+                        <select class="form-select w-100" name="Listing[categories][]" >
+                            <option value="" disabled selected>-- Select Category --</option>
+                            <option value="farm">Farm</option>
+                            <option value="beach">Beach</option>
+                            <option value="monument">Monument</option>
+                            <option value="city">City</option>
+                            <option value="skiing">Skiing</option>
+                            <option value="snow">Snow</option>
+                            <option value="arctic">Arctic</option>
+                            <option value="river">River</option>
+                            <option value="pool">Pool</option>
+                            <option value="rainy">Rainy</option>
+                            <option value="zoo">Zoo</option>
+                            <option value="castle">Castle</option>
+                            <option value="mountain">Mountain</option>;
+                            <option value="amazingView">Amazing Views</option>
+                            <option value="nature">Nature</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select w-100" name="Listing[categories][]" >
+                            <option value="" disabled selected>-- Select Category --</option>
+                            <option value="farm">Farm</option>
+                            <option value="beach">Beach</option>
+                            <option value="monument">Monument</option>
+                            <option value="city">City</option>
+                            <option value="skiing">Skiing</option>
+                            <option value="snow">Snow</option>
+                            <option value="arctic">Arctic</option>
+                            <option value="river">River</option>
+                            <option value="pool">Pool</option>
+                            <option value="rainy">Rainy</option>
+                            <option value="zoo">Zoo</option>
+                            <option value="castle">Castle</option>
+                            <option value="mountain">Mountain</option>;
+                            <option value="amazingView">Amazing Views</option>
+                            <option value="nature">Nature</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select w-100" name="Listing[categories][]" >
+                            <option value="" disabled selected>-- Select Category --</option>
+                            <option value="farm">Farm</option>
+                            <option value="beach">Beach</option>
+                            <option value="monument">Monument</option>
+                            <option value="city">City</option>
+                            <option value="skiing">Skiing</option>
+                            <option value="snow">Snow</option>
+                            <option value="arctic">Arctic</option>
+                            <option value="river">River</option>
+                            <option value="pool">Pool</option>
+                            <option value="rainy">Rainy</option>
+                            <option value="zoo">Zoo</option>
+                            <option value="castle">Castle</option>
+                            <option value="mountain">Mountain</option>;
+                            <option value="amazingView">Amazing Views</option>
+                            <option value="nature">Nature</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn add-btn mt-2">Add</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
+    
+</body>

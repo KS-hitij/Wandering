@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listing"><i class="fa-regular fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listing">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listing/new">Add New Listing</a>
+        <% if(!currUser) {%>
+          <a class="nav-link" href="/user/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/user/login"><b>Log In</b></a>
+          <% } %>
+            <% if(currUser){ %>
+              <a class="nav-link" href="/user/logout"><b>Log Out</b></a>
+              <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom filters-menu">
+  <div class="filters container-fluid mt-3">
+    <div class="filter ms-3 nav-item">
+      <a href="/listing/category/farm">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-tractor"></i></div>
+        <p>Farm</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/beach">
+        <div class="filter-icon text-center mb-1"><i class="fa-solid fa-umbrella-beach"></i></i></div>
+        <p>Beach</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/arctic">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-igloo"></i></div>
+        <p>Arctic</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/nature">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-tree"></i></div>
+        <p>Nature</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/monument">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-monument"></i></div>
+        <p>Monuments</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/city">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-city"></i></div>
+        <p>City</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/pool">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Pool</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/castle">
+        <div class="filter-icon mb-1 text-center"><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castle</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/snow">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-snowflake"></i></div>
+        <p>Snow</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/mountain">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/skiing">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-person-skiing"></i></div>
+        <p>Skiing</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/river">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-water"></i></div>
+        <p>River</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/zoo">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-dog"></i></div>
+        <p>Zoo</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/rainy">
+        <div class="filter-icon mb-1 text-center"><i class="fa-solid fa-cloud-rain"></i></div>
+        <p>Rainy</p>
+      </a>
+    </div>
+    <div class="filter ms-5 nav-item">
+      <a href="/listing/category/amazingView"><div class="filter-icon mb-1 text-center"><i class="fa-solid fa-rainbow"></i></div>
+        <p>Amazing Views</p>
+      </a>
+    </div>
+  </div>
+</nav>
