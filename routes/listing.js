@@ -26,6 +26,9 @@ router.get("/",wrapAsync(listingController.index))
 //category route
 router.get("/category/:filter",wrapAsync(listingController.categoryIndex));
 
+//search route
+router.get("/search/:destination", wrapAsync(listingController.search));
+
 //new route
 router.get("/new",isLoggedIn,listingController.renderNewForm);
 
@@ -43,6 +46,7 @@ router.put("/:id",isLoggedIn,isOwner,upload.single("Listing[image]"),processList
 
 //delete listing route
 router.delete("/:id",isLoggedIn,isOwner,wrapAsync(listingController.deleteListing));
+
 
 
 

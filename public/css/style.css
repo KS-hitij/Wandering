@@ -85,7 +85,7 @@ body{
     background-color: white;
 }
 
-.add-btn ,.edit-btn,.delete-btn,.review-btn,.register-btn, .show-btn{
+.add-btn ,.edit-btn,.delete-btn,.review-btn,.register-btn, .show-btn, .search-btn{
     background-color: #fe424d !important;
     border: none !important;
     color: white !important;

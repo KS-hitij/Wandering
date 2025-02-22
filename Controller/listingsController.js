@@ -21,7 +21,8 @@ module.exports.index=(async (req,res)=>{
         return res.json(result);
     }
     let filter = undefined;
-    res.render("listings/index.ejs", { result,filter });
+    let destination = undefined;
+    res.render("listings/index.ejs", { result,filter,destination });
 });
 
 module.exports.renderNewForm=(req,res)=>{
@@ -78,5 +79,32 @@ module.exports.categoryIndex=(async (req,res)=>{
     if (req.query.ajax) {
         return res.json(result);
     }
-    res.render("listings/index.ejs",{result,filter});
-})
+    let destination = undefined;
+    res.render("listings/index.ejs",{result,filter,destination});
+});
+
+module.exports.search=(async (req,res)=>{
+    let {destination} = req.params;
+    const page = parseInt(req.query.page) || 1;
+    const limit = 12;
+    const start = (page - 1) * limit;
+    const end = page*limit;
+    const allListings = await Listing.find({
+        location: { $regex: new RegExp(destination, "i") }
+    }).skip(start).limit(limit);
+    
+    const totalListings = await Listing.countDocuments({
+        location: { $regex: new RegExp(destination, "i") }
+    });
+    const result = {
+        allListings,
+        next: page + 1,
+        prev: page - 1,
+        hasNextPage: end < totalListings,
+    };
+    if (req.query.ajax) {
+        return res.json(result);
+    }
+    let filter = "";
+    res.render("listings/index.ejs", { result,filter,destination });
+});

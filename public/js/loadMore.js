@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currfilter = window.appData.filter || ""; // Read from global variable
     let currPage = window.appData.currPage || 1;
+    let currDest = window.appData.destination || "";
 
     const show = document.querySelector(".show-btn");
     const container = document.getElementById("listings-container");
@@ -11,7 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 let response;
                 if (currfilter) {
                     response = await fetch(`/listing/category/${encodeURIComponent(currfilter)}?page=${currPage}&ajax=true`);
-                } else {
+                }
+                else if(currDest){
+                    response = await fetch(`listing/search/${encodeURIComponent(currDest)}?page=${currPage}&ajax=true`);
+                }
+                else {
                     response = await fetch(`/listing?page=${currPage}&ajax=true`);
                 }
 

@@ -1,19 +1,27 @@
 <nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <!-- Brand -->
+
     <a class="navbar-brand" href="/listing">
       <i class="fa-regular fa-compass"></i>
     </a>
-    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse position-relative w-100" id="navbarNavAltMarkup">
+      
       <div class="navbar-nav">
         <a class="nav-link" href="/listing">Explore</a>
       </div>
+
+      <div class="navbar-nav ms-auto">
+        <div class="search-bar">
+          <input type="text" class="search form-control mb-2 mb-lg-0 mb-md-0 mb-sm-0" id="search" placeholder="Search By Destination">
+        </div>
+        <button class="search-btn btn rounded-4 ms-1" id="search-btn">Search</button>
+      </div>
+
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listing/new">Add New Listing</a>
         <% if (!currUser) { %>
@@ -24,12 +32,14 @@
         <a class="nav-link" href="/user/logout"><b>Log Out</b></a>
         <% } %>
       </div>
+
     </div>
   </div>
 </nav>
 
 
 <nav class="navbar navbar-expand-lg bg-body-light border-bottom filters-menu">
+
   <div class="filters container-fluid mt-3">
     <div class="filter ms-3 nav-item">
       <a href="/listing/category/farm">
@@ -121,4 +131,7 @@
       </a>
     </div>
   </div>
+
 </nav>
+
+<script src="/js/search.js"></script>

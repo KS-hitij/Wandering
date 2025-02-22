@@ -98,6 +98,7 @@ app.get("/",(req,res)=>{
 
 
 app.all("*",(req,res,next)=>{
+    console.log("Yo");
     next(new ExpressError(404,"Page Not Found!"));
 })
 

@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
     <body>
         <% if(result.allListings.length!=0) {%>
-        <h1>All Listings</h1><% if(typeof filter!== "undefined") {%><b> For <%= filter %><% } %></b>
+        <h1>All Listings</h1><% if(typeof filter!== "undefined") {%><b> For <%= filter %><% } %></b><% if(typeof destination!== "undefined") {%><b> <%= destination %><% } %></b>
         <% } %>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" id="listings-container">
             <% if(result.allListings.length!=0) {%>
@@ -34,7 +34,8 @@
         <script>
             window.appData = {
                 filter: "<%= filter ? filter : "" %>",
-                currPage: <%= result.next || 1 %>
+                currPage: <%= result.next || 1 %>,
+                destination: "<%= filter ? filter : "" %>"
             };
         </script>  
         <script src="/js/loadMore.js"></script>  
